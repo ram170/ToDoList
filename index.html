@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        This is a site
+    </title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <style>
+        .navbar{
+            overflow: hidden;
+            background-color: #261c24;
+            position: fixed;
+            top: 0;
+            width: 100%;            
+        }
+        .navbar a{
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: underline;
+            font-size: 17px;
+        }
+        .navbar a:hover{
+            background: #ddd;
+            color: black;
+        }
+        .main{
+            padding: 3%;
+        }
+        #bot{
+            position: fixed;
+            bottom: 0;
+            background-color: #d6d6dc;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        #Align{
+            padding-top: 6%;
+            text-align: center;
+            padding-right: 0.7em;
+        }
+    </style>
+    <script>
+        var list=[];
+        var s;
+        function myfun(){
+            var i;
+            var printthis="";
+            console.log(1);
+            s=document.getElementById("val").value;
+            list.push(s);
+            for(i=0;i<list.length;i++){
+                 printthis=printthis+"<br>"+(i+1)+". "+list[i];
+            }
+            document.getElementById("put").innerHTML=printthis;
+            document.getElementById("val").value="";
+        }
+        function res(){
+            list=[];
+            document.getElementById("put").innerHTML="";
+        }
+        function pop(){
+            var i;
+            var printthis="";
+            var x=list.shift();
+            for(i=0;i<list.length;i++){
+                 printthis=printthis+"<br>"+(i+1)+". "+list[i];
+            }
+            document.getElementById("put").innerHTML=printthis;
+            document.getElementById("val").value="";
+            alert(x+" Has been removed");
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+            <a href="https://ram170.github.io/" target="_blank" >Sup!</a>
+            <a href="https://www.youtube.com/watch?v=CMX2lPum_pg" target="_blank">Song?</a>
+            <a href="https://images5.alphacoders.com/764/thumb-350-764296.png" target="_blank">Anime?</a>
+    </div>
+    <h1 id="Align"><u>To Do List</u></h1>
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <center><p id="put"> </p></center>
+                    <center><input type="text" placeholder="Hello!" id="val"></center> 
+                    <center><button onclick="myfun()">Ok</button></center>
+                   <p><center><button onclick="pop()">Pop top</button><button onclick="res()">Reset</button></center></p> 
+                </div>
+                <div class="col-lg-4"></div>    
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="bot">
+            <h2><b>Free wisdom :)</b></h2>
+            <div class="col-sm-4">
+                <h3><b>Shawshank Redemption</b></h3>
+                <p><i>"I have to remind myself that some birds aren’t meant to be caged. Their feathers are just too bright."</i></p>
+            </div>
+            <div class="col-sm-4">
+                    <h3><b>Fight Club</b></h3>
+                    <p><i>"Advertising has us chasing cars and clothes, working jobs we hate so we can buy shit we don't need."</i></p>
+            </div>
+            <div class="col-sm-4">
+                    <h3><b>Your Lie In April</b></h3>
+                    <p><i>"Spring will be here soon. Spring, the season I met you, is coming. A Spring without you…is coming."</i></p>
+            </div>
+        </div>
+    </div>
+</body>
